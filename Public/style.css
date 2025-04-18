@@ -111,6 +111,29 @@ header{
   transition: transform 0.3s ease-in-out;
 }
 
+.nav-download {
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-download:hover {
+  /* background-color: orangered; */
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .nav-download {
+    text-align: center;
+    margin: 10px 0;
+    width: 80%;
+    align-self: center;
+  }
+}
+
 .nav-links {
   list-style: none;
   display: flex;
