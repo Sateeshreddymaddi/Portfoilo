@@ -3,17 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SateeshReddy's Portfolio - Web Developer, Designer, and Security Enthusiast.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="author" content="SateeshReddy Maddi">
   <title>SateeshReddy | Portfolio </title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <header>
     <!-- Navbar -->
     <nav class="navbar">
       <div class="nav-container">
-        <a href="" class="logo"><img src="home.png"></a>
+        <a href="" class="logo">
+          <div class="logo-text">Portfolio<span class="dot"></span></div>
+        </a>
         <input type="checkbox" id="toggle-menu" class="toggle-menu">
-        <label for="toggle-menu" class="hamburger">&#9776;</label>
+        <label for="toggle-menu" class="hamburger">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
         <ul class="nav-links">
           <li><a href="#home" class="active"><b>Home</b></a></li>
           <li><a href="#about"><b>About</b></a></li>
@@ -21,40 +38,69 @@
           <li><a href="#skills"><b>Skills</b></a></li>
           <li><a href="#projects"><b>Projects</b></a></li>
           <li><a href="#contact"><b>Contact</b></a></li>
-          <li><a href="Resume.pdf" download class="nav-download">Resume</a>
-          </li>
+          <li><a href="Resume.pdf" download class="nav-download">Resume</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- Home Section -->
+    <!-- Home Section with parallax scrolling -->
     <section class="home" id="home">
-      <div class="home-content">
-        <h1>Hello, I'm <span>SateeshReddy.Maddi</span></h1>
-        <p>Creative Developer | Designer | Full Stack Web Developer | Ethical Hacking enthuasist</p>
-        <a href="#projects" class="btn">Explore My Work</a>
+      <div class="home-content" data-aos="fade-up" data-aos-duration="1000">
+        <div class="glitch-wrapper">
+          <h1 class="glitch" data-text="I'm SateeshReddy.Maddi">I'm <span>SateeshReddy.Maddi</span></h1>
+        </div>
+        <div class="typewriter">
+          <p id="typewriter-text"></p>
+        </div>
+        <a href="#projects" class="btn btn-glow">Explore My Work</a>
+      </div>
+      <div class="scroll-indicator">
+        <span class="scroll-arrow"></span>
       </div>
     </section>
     
     <!-- About Section -->
     <section id="about" class="about">
-      <div class="container">
-        <h2>About Me</h2>
+      <div class="container" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="section-title">About Me</h2>
         <div class="content">
           <div class="about-content">
-            <img src="sateesh.jpg" alt="sateeshreddymaddi" class="profile-pic" id="profilePic">
-            <p class="img-content">Sateesh Reddy</p>
+            <div class="profile-container">
+              <img src="sateesh.jpg" alt="sateeshreddymaddi" class="profile-pic" id="profilePic">
+              <div class="profile-overlay">
+                <div class="profile-text">Sateesh Reddy</div>
+              </div>
+            </div>
+            <div class="tech-badge-container">
+              <span class="tech-badge">Web Dev</span>
+              <span class="tech-badge">Ethical Hacking</span>
+              <span class="tech-badge">Design</span>
+            </div>
           </div>
-          <div class="details">
-            <p>Hello! I'm Sateesh, a passionate web developer with a strong foundation 
+          <div class="details" data-aos="fade-left" data-aos-delay="200">
+            <p>Hello! I'm <span class="highlight">Sateesh</span>, a passionate web developer with a strong foundation 
               in creating dynamic websites. Currently, I'm learning ethical hacking to 
               enhance my skills in web security. I thrive on challenges and love exploring 
-              new technologies. In my free time, I enjoy working on personal projects and 
+              new technologies.</p>
+            <p>In my free time, I enjoy working on personal projects and 
               contributing to open-source initiatives. I'm excited to connect with others
-              and grow in the tech community!
-            </p>
+              and grow in the tech community!</p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number" data-count="3">1</span>
+                <span class="stat-text">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="15">10</span>
+                <span class="stat-text">Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="8">4</span>
+                <span class="stat-text">Technologies</span>
+              </div>
+            </div>
           </div>  
         </div>
       </div>
@@ -63,105 +109,369 @@
     <!-- Education Section -->
     <section id="education" class="education">
       <div class="container">
-        <h2>Educational Background</h2>
-        <div class="education-grid">
-          <div class="education-card">
-            <h3>B.Tech in Computer Science</h3>
-            <p><strong>JB Group</strong><br>Hyderabad,Telangana</p>
-            <p>2022 - 2026</p>
-            <p>GPA as of now 7.78</p>
+        <h2 class="section-title" data-aos="fade-up">Educational Background</h2>
+        <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-item">
+            <div class="timeline-content" data-aos="fade-right">
+              <span class="date">2022 - 2026</span>
+              <h3>B.Tech in Computer Science</h3>
+              <p><strong>JB Group</strong><br>Hyderabad, Telangana</p>
+              <p>GPA as of now 7.78</p>
+            </div>
           </div>
-          <div class="education-card">
-            <h3>Intermediate </h3>
-            <p><strong>Vivekananda Junior College</strong><br>K.V.Ranga Reddy,Telangana </p>
-            <p>2020 - 2022</p>
-            <p>Percentage 68.9 %</p>
+          <div class="timeline-item">
+            <div class="timeline-content" data-aos="fade-left">
+              <span class="date">2020 - 2022</span>
+              <h3>Intermediate</h3>
+              <p><strong>Vivekananda Junior College</strong><br>K.V.Ranga Reddy, Telangana</p>
+              <p>Percentage 68.9%</p>
+            </div>
           </div>
-          <div class="education-card">
-            <h3>Secondary School Certificate</h3>
-            <p><strong>K.N.R High School</strong><br>K.V.Ranga Reddy,Telangana</p>
-            <p>2019-2020</p>
-            <p>GPA 9.7 %</p>
+          <div class="timeline-item">
+            <div class="timeline-content" data-aos="fade-right">
+              <span class="date">2019 - 2020</span>
+              <h3>Secondary School Certificate</h3>
+              <p><strong>K.N.R High School</strong><br>K.V.Ranga Reddy, Telangana</p>
+              <p>GPA 9.7</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <h2>Technical Skills</h2>
-      <div class="box">
-        <span style="--i:1"><img src="Clang.png" ></span>
-        <span style="--i:2"><img src="html.png" ></span>
-        <span style="--i:3"><img src="Js.png"></span>
-        <span style="--i:4"><img src="mongo.png"></span>
-        <span style="--i:5"><img src="mysql.png" ></span>
-        <span style="--i:6"><img src="python.png" ></span>
-        <span style="--i:7"><img src="react.jpeg.jpg" ></span>
-        <span style="--i:8"><img src="ethicalhacking.jpeg" ></span>
+<!-- Simplified Skills Section -->
+<section id="skills" class="skills">
+  <h2 class="section-title">Technical Skills</h2>
+  
+  <!-- Skills Cards -->
+  <div class="skills-container">
+    <div class="skill-card" data-skill="HTML/CSS">
+      <div class="skill-icon">
+        <i class="fab fa-html5"></i>
       </div>
-    </section>
+      <h3>HTML/CSS</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 90%"></div>
+      </div>
+      <div class="skill-percentage">90%</div>
+      <span class="skill-badge">Advanced</span>
+    </div>
     
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="project-grid">
-
-          <div class="project-card">
-            <h3><a class="project-titles">BookEase</a></h3>
-            <p>This project was part of my micro project initiative.</p>
+    <div class="skill-card" data-skill="JavaScript">
+      <div class="skill-icon">
+        <i class="fab fa-js"></i>
+      </div>
+      <h3>JavaScript</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 50%"></div>
+      </div>
+      <div class="skill-percentage">50%</div>
+      <span class="skill-badge">Intermediate</span>
+    </div>
+    
+    <div class="skill-card" data-skill="Python">
+      <div class="skill-icon">
+        <i class="fab fa-python"></i>
+      </div>
+      <h3>Python</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 20%"></div>
+      </div>
+      <div class="skill-percentage">20%</div>
+      <span class="skill-badge">Beginner</span>
+    </div>
+    
+    <div class="skill-card" data-skill="React">
+      <div class="skill-icon">
+        <i class="fab fa-react"></i>
+      </div>
+      <h3>React</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 45%"></div>
+      </div>
+      <div class="skill-percentage">45%</div>
+      <span class="skill-badge">Intermediate</span>
+    </div>
+    
+    <div class="skill-card" data-skill="MongoDB">
+      <div class="skill-icon">
+        <i class="fas fa-database"></i>
+      </div>
+      <h3>MongoDB</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 70%"></div>
+      </div>
+      <div class="skill-percentage">70%</div>
+      <span class="skill-badge">Advanced</span>
+    </div>
+    
+    <div class="skill-card" data-skill="MySQL">
+      <div class="skill-icon">
+        <i class="fas fa-server"></i>
+      </div>
+      <h3>MySQL</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 50%"></div>
+      </div>
+      <div class="skill-percentage">50%</div>
+      <span class="skill-badge">Intermediate</span>
+    </div>
+    
+    <div class="skill-card" data-skill="C">
+      <div class="skill-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3>C ++</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 30%"></div>
+      </div>
+      <div class="skill-percentage">30%</div>
+      <span class="skill-badge">Intermediate</span>
+    </div>
+    
+    <div class="skill-card" data-skill="Ethical Hacking">
+      <div class="skill-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Ethical Hacking</h3>
+      <div class="skill-level">
+        <div class="skill-progress" style="width: 10%"></div>
+      </div>
+      <div class="skill-percentage">10%</div>
+        <span class="skill-badge">Beginner</span>
+      </div>
+    </div>
+</section>
+ <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Projects</h2>
+      <div class="project-grid" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card" data-category="web api">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://airbnb-clone-ktd1.onrender.com/listings" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #3498db">
+              <i class="fas fa-book"></i>
+            </div>
           </div>
-    
-          <div class="project-card">
-            <h3><a  class="project-titles">AI Image Generation</a></h3>
+          <div class="project-info">
+            <h3><a class="project-titles">Airbnb Clone</a></h3>
+            <p>Airbnb Clone is a basic full-stack web application where users can sign up, log in with JWT authentication, add property listings, and rate stays. Built using React.js, Node.js, Express.js, and MongoDB, it supports essential CRUD operations and features a responsive UI.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>MongoDB</span>
+              <span>Express Js</span>
+              <span>Node Js</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="project-card" data-category="api">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #9b59b6">
+              <i class="fas fa-brain"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><a class="project-titles">AI Image Generation</a></h3>
             <p>A college project developed to enable image generation using APIs.</p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>API</span>
+              <span>Frontend</span>
+            </div>
           </div>
-    
-          <div class="project-card">
-            <h3><a  class="project-titles">Spotify page Clone</a></h3>
-            <p>A basic project completed to showcase frontend development skills. </p>
+        </div>
+  
+        <div class="project-card" data-category="web design">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #27ae60">
+              <i class="fab fa-spotify"></i>
+            </div>
           </div>
-    
-          <div class="project-card">
-            <h3><a  class="project-titles">Photography Page</a></h3>
+          <div class="project-info">
+            <h3><a class="project-titles">Spotify page Clone</a></h3>
+            <p>A basic project completed to showcase frontend development skills.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="project-card" data-category="design">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #e74c3c">
+              <i class="fas fa-camera"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><a class="project-titles">Photography Page</a></h3>
             <p>A project designed to learn and understand CSS.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
           </div>
-    
-          <div class="project-card">
+        </div>
+  
+        <div class="project-card" data-category="web">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #f39c12">
+              <i class="fas fa-gamepad"></i>
+            </div>
+          </div>
+          <div class="project-info">
             <h3><a class="project-titles">Simmons Game Page</a></h3>
             <p>A game created to explore and understand JavaScript functionalities.</p>
-          </div>
-    
-          <div class="project-card">
-            <h3><a class="project-titles"></a>Weather App</h3>
-            <p>Completed to understand the functionalities of APIs.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
           </div>
         </div>
+  
+        <div class="project-card" data-category="api">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #2980b9">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><a class="project-titles">Weather App</a></h3>
+            <p>Completed to understand the functionalities of APIs.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>API</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-img">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-thumb" style="background-color: #8e44ad">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><a class="project-titles">Portfolio</a></h3>
+            <p>My personal portfolio website showcasing my skills and projects.</p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
       </div>
-    </section>
+    </div>
+  </section>
     
     <!-- Contact Section -->
-    <!-- <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <form action="mailto:sateeshreddymaddi@gmail.com" method="POST" enctype="text/plain">
-          <input type="text" name="Name" placeholder="Name" required>
-          <input type="email" name="E-mail" placeholder="Email" required>
-          <textarea name="message/suggestion" placeholder="Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section> -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Contact Me</h2>
-        <form id="contact-form" action="https://formspree.io/f/mldgyknn" method="POST">
-          <input type="text" name="name" id="name" placeholder="Your Name" required>
-          <input type="email" name="email" id="email" placeholder="Your Email" required>
-          <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+        <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+        <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Location</h3>
+                <p>Hyderabad, Telangana, India</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>sateeshreddymaddi@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>+91 XXXXXXXXXX</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=100024787787444&mibextid=ZbWKwL" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/sateesh-reddy-maddi-4148b9285" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/maddi_sateesh" class="social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/sateesh_99" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <form id="contact-form" action="https://formspree.io/f/mldgyknn" method="POST" class="contact-form">
+            <div class="form-group">
+              <input type="text" name="name" id="name" placeholder="Your Name" required>
+              <span class="focus-border"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="email" placeholder="Your Email" required>
+              <span class="focus-border"></span>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+              <span class="focus-border"></span>
+            </div>
+            <button type="submit" class="btn btn-submit">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
         <p id="form-status"></p>
       </div>
     </section>
@@ -169,24 +479,44 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <ul class="list">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <hr>
-    <div class="social">
-      <a href="https://www.facebook.com/profile.php?id=100024787787444&mibextid=ZbWKwL"><img src="square-facebook-brands-solid.png"></a>
-      <a href="https://www.linkedin.com/in/sateesh-reddy-maddi-4148b9285"><img src="linkedin-brands-solid.png"></a>
-      <a href="https://x.com/maddi_sateesh"><img src="x-solid.png"></a>
-      <a href="https://www.instagram.com/sateesh_99"><img src="instagram-brands-solid.png"></a>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-text">SateeshReddy Maddi<span class="dot"></span></div>
+        <p>Web Developer | Designer | Security Enthusiast</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100024787787444&mibextid=ZbWKwL">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sateesh-reddy-maddi-4148b9285">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://x.com/maddi_sateesh">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/sateesh_99">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
-    <p class="copyright">&copy;2024 Sateesh | All Rights Reserved</p>
+    <div class="copyright">
+      <p>&copy; 2025 Sateesh | All Rights Reserved</p>
+    </div>
   </footer>
+
+  <!-- Back to top button -->
+  <a href="#home" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
   
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
