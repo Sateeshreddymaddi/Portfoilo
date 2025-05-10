@@ -30,3 +30,6 @@ yarn-error.log
 *.pid
 *.seed
 *.pid.lock
+
+# Optional: Ignore coverage reports
+.firebaserc/
