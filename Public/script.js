@@ -8,7 +8,7 @@ document.onkeydown = function(e) {
     return false;
   }
 };
-// document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize progress bars to 0% width
   const progressBars = document.querySelectorAll('.skill-progress');
