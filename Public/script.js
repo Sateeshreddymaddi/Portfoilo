@@ -10,13 +10,12 @@ document.onkeydown = function(e) {
 };
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize progress bars to 0% width
   const progressBars = document.querySelectorAll('.skill-progress');
   progressBars.forEach(bar => {
     const finalWidth = bar.style.width;
     bar.style.width = '0';
     
-    // Simple timeout to animate them after page load
+
     setTimeout(() => {
       bar.style.width = finalWidth;
     }, 500);
