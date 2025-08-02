@@ -1,13 +1,13 @@
-document.onkeydown = function(e) {
-  if (
-    e.key === "F12" || 
-    (e.ctrlKey && e.shiftKey && e.key === 'I') || 
-    (e.ctrlKey && e.shiftKey && e.key === 'J') || 
-    (e.ctrlKey && e.key === 'U')
-  ) {
-    return false;
-  }
-};
+// document.onkeydown = function(e) {
+//   if (
+//     e.key === "F12" || 
+//     (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+//     (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+//     (e.ctrlKey && e.key === 'U')
+//   ) {
+//     return false;
+//   }
+// };
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('DOMContentLoaded', function() {
   const progressBars = document.querySelectorAll('.skill-progress');
@@ -202,8 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       if (valid) {
-        // Here you would typically handle the form submission via AJAX
-        // For now, just display a success message
+
         const formStatus = document.querySelector('#form-status');
         formStatus.innerHTML = '<div class="alert alert-success">Thank you! Your message has been sent.</div>';
         
