@@ -1,4 +1,3 @@
-// Disable developer tools
 document.onkeydown = function(e) {
   if (
     e.key === "F12" || 
@@ -9,11 +8,7 @@ document.onkeydown = function(e) {
     return false;
   }
 };
-
-// Disable right-click context menu
 document.addEventListener('contextmenu', event => event.preventDefault());
-
-// Progress bar animation
 document.addEventListener('DOMContentLoaded', function() {
   const progressBars = document.querySelectorAll('.skill-progress');
   progressBars.forEach(bar => {
@@ -26,9 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Main initialization
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize AOS (Animate on Scroll)
   if (typeof AOS !== 'undefined') {
     AOS.init({
       duration: 1000,
@@ -37,8 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
       mirror: false
     });
   }
-
-  // Initialize particles.js
   if (typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {
       "particles": {
@@ -147,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Smooth scrolling for navigation links
   document.querySelectorAll('a.nav-link, a.smooth-scroll').forEach(link => {
     link.addEventListener('click', function(e) {
       if (this.hash !== "") {
@@ -166,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Mobile navigation toggle
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const navbar = document.querySelector('#navbar');
   
@@ -178,17 +167,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Contact form handling - IMPROVED VERSION
   const contactForm = document.querySelector('#contact-form');
-  
-  // Utility functions
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
   function displayError(field, message) {
-    removeError(field); // Remove any existing error first
+    removeError(field);
     
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
@@ -290,25 +276,19 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!valid) {
         return;
       }
-      
-      // Show loading state
+    
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span>Sending...</span>';
       submitBtn.disabled = true;
       
       try {
-        // Prepare form data
         const formData = new FormData(contactForm);
-        
-        // Log for debugging
         console.log('Submitting form to:', contactForm.action);
         console.log('Form data:', {
           name: formData.get('name'),
           email: formData.get('email'),
           message: formData.get('message')
         });
-        
-        // Submit to Formspree
         const response = await fetch(contactForm.action, {
           method: 'POST',
           body: formData,
@@ -320,11 +300,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Response status:', response.status);
         
         if (response.ok) {
-          // Success
           showFormStatus('✅ Thank you! Your message has been sent successfully. I\'ll get back to you soon!', true);
           contactForm.reset();
         } else {
-          // Handle different error types
           let errorMessage = 'Sorry, there was an error sending your message. Please try again.';
           
           try {
@@ -351,15 +329,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
       } catch (error) {
         console.error('Form submission error:', error);
-        showFormStatus('❌ Network error. Please check your connection and try again.', false);
+        showFormStatus('🥲 Network error. Please check your connection and try again.', false);
       } finally {
-        // Restore button state
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
       }
     });
     
-    // Real-time validation
     const nameField = document.querySelector('#name');
     const emailField = document.querySelector('#email');
     const messageField = document.querySelector('#message');
@@ -394,41 +370,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   }
-
-  // Portfolio filters
-  const portfolioFilters = document.querySelectorAll('#portfolio-filters li');
-  if (portfolioFilters.length > 0) {
-    portfolioFilters.forEach(filter => {
-      filter.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        portfolioFilters.forEach(item => {
-          item.classList.remove('filter-active');
-        });
-        
-        this.classList.add('filter-active');
-        
-        const filterValue = this.getAttribute('data-filter');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        portfolioItems.forEach(item => {
-          if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
 });
 
-// Back to top button
 document.addEventListener('DOMContentLoaded', function() {
   const backToTopButton = document.querySelector('.back-to-top');
   
   if (backToTopButton) {
-    // Show/hide the button based on scroll position
     window.addEventListener('scroll', function() {
       if (window.scrollY > 300) {
         backToTopButton.classList.add('active');
@@ -437,7 +384,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Smooth scroll to top when clicked
     backToTopButton.addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({
@@ -448,7 +394,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Close mobile menu on scroll
 window.addEventListener("scroll", () => {
   const toggle = document.getElementById("toggle-menu");
   if (toggle && toggle.checked) {
@@ -456,7 +401,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Add form validation styles
 const formStyles = `
   .error-message {
     animation: fadeIn 0.3s ease-in;
@@ -474,7 +418,6 @@ const formStyles = `
   }
 `;
 
-// Inject styles
 const styleSheet = document.createElement('style');
 styleSheet.textContent = formStyles;
 document.head.appendChild(styleSheet);
