@@ -22,7 +22,7 @@
   <!-- Favicon -->
   <link rel="icon" href="./images/favicon.png" type="image/png">
 
-  <!-- Google Fonts - preload instead of @import in CSS -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload"
@@ -36,11 +36,17 @@
   <!-- Your CSS -->
   <link rel="stylesheet" href="style.css">
 
- <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+  <!-- FontAwesome - from cdnjs only (matches CSP) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
+
   <!-- AOS CSS -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   </noscript>
@@ -48,7 +54,7 @@
   <!-- Scripts - deferred -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -105,7 +111,7 @@
         <div class="content">
           <div class="about-content">
             <div class="profile-container">
-              <img src="./images/sateesh.webp" alt="sateeshreddymaddi" class="profile-pic" id="profilePic">
+              <img src="./images/sateesh.webp" loading="lazy" alt="sateeshreddymaddi" class="profile-pic" id="profilePic">
               <div class="profile-overlay">
                 <div class="profile-text">Sateesh Reddy</div>
               </div>
@@ -183,63 +189,63 @@
         <!-- Skills Icons -->
         <div class="skills-container">
             <div class="skill-icon-card" data-skill="Html-5">
-                <img src="./images/html.webp" alt="HTML-5" class="skill-image">
+                <img src="./images/html.webp" loading="lazy" alt="HTML-5" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="CSS">
-                <img src="./images/CSS.webp" alt="CSS" class="skill-image">
+                <img src="./images/CSS.webp" loading="lazy" alt="CSS" class="skill-image">
             </div>
             
             <div class="skill-icon-card" data-skill="JavaScript">
-                <img src="./images/Js.webp" alt="JavaScript" class="skill-image">
+                <img src="./images/Js.webp" loading="lazy" alt="JavaScript" class="skill-image">
             </div>
             
             <div class="skill-icon-card" data-skill="C++">
-                <img src="./images/C++.webp" alt="C++" class="skill-image">
+                <img src="./images/C++.webp" loading="lazy" alt="C++" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="Python">
-                <img src="./images/python.webp" alt="Python" class="skill-image">
+                <img src="./images/python.webp" loading="lazy" alt="Python" class="skill-image">
             </div>
             
             <div class="skill-icon-card" data-skill="React">
-                <img src="./images/react.jpeg.webp" alt="React" class="skill-image">
+                <img src="./images/react.jpeg.webp" loading="lazy" alt="React" class="skill-image">
             </div>
             
             <div class="skill-icon-card" data-skill="MongoDB">
-                <img src="./images/mongo.webp" alt="MongoDB" class="skill-image">
+                <img src="./images/mongo.webp" loading="lazy" alt="MongoDB" class="skill-image">
             </div>
             
             <div class="skill-icon-card" data-skill="MySQL">
-                <img src="./images/mysql.webp" alt="MySQL" class="skill-image">
+                <img src="./images/mysql.webp" loading="lazy" alt="MySQL" class="skill-image">
             </div>
            
             <div class="skill-icon-card" data-skill="Ethical Hacking">
-                <img src="./images/ethicalhacking.webp" alt="Ethical Hacking" class="skill-image">
+                <img src="./images/ethicalhacking.webp" loading="lazy" alt="Ethical Hacking" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="Docker">
-                <img src="./images/docker.webp" alt="Docker" class="skill-image">
+                <img src="./images/docker.webp" loading="lazy" alt="Docker" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="Git">
-                <img src="./images/git.webp" alt="Git" class="skill-image">
+                <img src="./images/git.webp" loading="lazy" alt="Git" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="n8n-workflow">
-                <img src="./images/N8N.webp" alt="n8n-workflow" class="skill-image">
+                <img src="./images/N8N.webp" loading="lazy" alt="n8n-workflow" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="Git Hub">
-                <img src="./images/github.webp" alt="Ethical Hacking" class="skill-image">
+                <img src="./images/github.webp" loading="lazy" alt="Ethical Hacking" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="BootStrap">
-                <img src="./images/bootstrap.webp" alt="BootStrap" class="skill-image">
+                <img src="./images/bootstrap.webp" loading="lazy" alt="BootStrap" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="Tailwind CSS">
-                <img src="./images/tailwindcss.webp" alt="Tailwind CSS" class="skill-image">
+                <img src="./images/tailwindcss.webp" loading="lazy" alt="Tailwind CSS" class="skill-image">
             </div>
 
             <div class="skill-icon-card" data-skill="Linux-Commands">
@@ -259,7 +265,7 @@
                 <div class="project-card" data-category="web app">
                     <div class="project-badge">New</div>
                     <div class="project-img">
-                        <img src="./images/test hub.webp" alt="Task Management App">
+                        <img src="./images/test hub.webp" loading="lazy" alt="Task Management App">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -284,7 +290,7 @@
                 <div class="project-card" data-category="web app">
                     <div class="project-badge">New</div>
                     <div class="project-img">
-                        <img src="./images/Resume classifier.webp" alt="Resume Classifier">
+                        <img src="./images/Resume classifier.webp" loading="lazy" alt="Resume Classifier">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -309,7 +315,7 @@
                 <!-- Airbnb Clone -->
                 <div class="project-card" data-category="web app">
                     <div class="project-img">
-                        <img src="./images/airbnb.webp" alt="Airbnb Clone">
+                        <img src="./images/airbnb.webp" loading="lazy" alt="Airbnb Clone">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://airbnb-clone-ktd1.onrender.com/listings" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -333,7 +339,7 @@
                 <!-- AI Image Generation -->
                 <div class="project-card" data-category="api">
                     <div class="project-img">
-                        <img src="./images/image_generation.webp" alt="AI Image Generation">
+                        <img src="./images/image_generation.webp" loading="lazy" alt="AI Image Generation">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -356,7 +362,7 @@
                 <!-- Spotify Clone -->
                 <div class="project-card" data-category="web design">
                     <div class="project-img">
-                        <img src="./images/spotify_clone.webp" alt="Spotify Clone">
+                        <img src="./images/spotify_clone.webp" loading="lazy" alt="Spotify Clone">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -379,7 +385,7 @@
                 <!-- Photography Portfolio -->
                 <div class="project-card" data-category="design">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=300&fit=crop&crop=center" alt="Photography Portfolio">
+                        <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=300&fit=crop&crop=center" loading="lazy" alt="Photography Portfolio">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -402,7 +408,7 @@
                 <!-- Weather Dashboard -->
                 <div class="project-card" data-category="api">
                     <div class="project-img">
-                        <img src="./images/weather_app.webp" alt="Weather App">
+                        <img src="./images/weather_app.webp" loading="lazy" alt="Weather App">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -425,7 +431,7 @@
                 <!-- Hungman Game -->
                 <div class="project-card" data-category="web game">
                     <div class="project-img">
-                        <img src="./images/Hungman Game.webp" alt="Hungman Game">
+                        <img src="./images/Hungman Game.webp" loading="lazy" alt="Hungman Game">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
@@ -448,7 +454,7 @@
                 <!-- Portfolio Website -->
                 <div class="project-card" data-category="web">
                     <div class="project-img">
-                        <img src="./images/Portfolio.webp" alt="Portfolio Website">
+                        <img src="./images/Portfolio.webp" loading="lazy" alt="Portfolio Website">
                         <!-- <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
