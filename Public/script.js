@@ -9,17 +9,24 @@ document.onkeydown = function(e) {
   }
 };
 document.addEventListener('contextmenu', event => event.preventDefault());
-document.addEventListener('DOMContentLoaded', function() {
-  const progressBars = document.querySelectorAll('.skill-progress');
-  progressBars.forEach(bar => {
-    const finalWidth = bar.style.width;
-    bar.style.width = '0';
-    
-    setTimeout(() => {
-      bar.style.width = finalWidth;
-    }, 500);
-  });
-});
+
+const formStyles = `
+  .error-message {
+    animation: fadeIn 0.3s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .form-group input.error,
+  .form-group textarea.error {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+  }
+`;
+const styleSheet = document.createElement('style');
+styleSheet.textContent = formStyles;
+document.head.appendChild(styleSheet);
 
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof AOS !== 'undefined') {
@@ -30,135 +37,88 @@ document.addEventListener('DOMContentLoaded', function() {
       mirror: false
     });
   }
+
   if (typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#00d9ff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 }
         },
-        "color": {
-          "value": "#00d9ff"
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
         },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-            "nb_sides": 5
-          }
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
         },
-        "opacity": {
-          "value": 0.5,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00d9ff",
+          opacity: 0.4,
+          width: 1
         },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 2,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#00d9ff",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 2,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: { enable: false, rotateX: 600, rotateY: 1200 }
         }
       },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
         },
-        "modes": {
-          "grab": {
-            "distance": 140,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+          repulse: { distance: 200, duration: 0.4 },
+          push: { particles_nb: 4 },
+          remove: { particles_nb: 2 }
         }
       },
-      "retina_detect": true
+      retina_detect: true
     });
   }
 
+  // ── Skill Progress Bars ───────────────────
+  const progressBars = document.querySelectorAll('.skill-progress');
+  progressBars.forEach(bar => {
+    const finalWidth = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => { bar.style.width = finalWidth; }, 500);
+  });
+
+  // ── Smooth Scroll ─────────────────────────
   document.querySelectorAll('a.nav-link, a.smooth-scroll').forEach(link => {
     link.addEventListener('click', function(e) {
       if (this.hash !== "") {
         e.preventDefault();
-        
-        const hash = this.hash;
-        const target = document.querySelector(hash);
-        
+        const target = document.querySelector(this.hash);
         if (target) {
-          window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
         }
       }
     });
   });
 
+  // ── Mobile Nav Toggle ─────────────────────
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const navbar = document.querySelector('#navbar');
-  
   if (mobileNavToggle) {
     mobileNavToggle.addEventListener('click', function() {
       navbar.classList.toggle('navbar-mobile');
@@ -167,34 +127,52 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ── Close mobile menu on scroll ───────────
+  window.addEventListener("scroll", () => {
+    const toggle = document.getElementById("toggle-menu");
+    if (toggle && toggle.checked) toggle.checked = false;
+  });
+
+  // ── Back to Top Button ────────────────────
+  const backToTopButton = document.querySelector('.back-to-top');
+  if (backToTopButton) {
+    window.addEventListener('scroll', function() {
+      backToTopButton.classList.toggle('active', window.scrollY > 300);
+    });
+    backToTopButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ── Navbar scroll effect ──────────────────
+  const nav = document.querySelector('.navbar');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  }
+
+  // ── Contact Form ──────────────────────────
   const contactForm = document.querySelector('#contact-form');
+
   function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
   function displayError(field, message) {
     removeError(field);
-    
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
-    errorDiv.style.cssText = `
-      color: #e74c3c;
-      font-size: 14px;
-      margin-top: 5px;
-      font-weight: 500;
-    `;
+    errorDiv.style.cssText = 'color:#e74c3c;font-size:14px;margin-top:5px;font-weight:500;';
     errorDiv.textContent = message;
-    
     field.parentNode.appendChild(errorDiv);
     field.style.borderColor = '#e74c3c';
   }
 
   function removeError(field) {
     const errorMsg = field.parentNode.querySelector('.error-message');
-    if (errorMsg) {
-      errorMsg.remove();
-    }
+    if (errorMsg) errorMsg.remove();
     field.style.borderColor = '';
   }
 
@@ -205,130 +183,72 @@ document.addEventListener('DOMContentLoaded', function() {
       formStatus.id = 'form-status';
       contactForm.parentNode.insertBefore(formStatus, contactForm.nextSibling);
     }
-    
-    const className = isSuccess ? 'alert-success' : 'alert-error';
-    const bgColor = isSuccess ? '#d4edda' : '#f8d7da';
+    const bgColor   = isSuccess ? '#d4edda' : '#f8d7da';
     const textColor = isSuccess ? '#155724' : '#721c24';
-    
+    const border    = isSuccess ? '#c3e6cb' : '#f5c6cb';
     formStatus.innerHTML = `
-      <div class="alert ${className}" style="
-        background: ${bgColor}; 
-        color: ${textColor}; 
-        padding: 15px; 
-        border-radius: 5px; 
-        margin-top: 15px;
-        border: 1px solid ${isSuccess ? '#c3e6cb' : '#f5c6cb'};
-      ">
+      <div style="background:${bgColor};color:${textColor};padding:15px;
+        border-radius:5px;margin-top:15px;border:1px solid ${border};">
         ${message}
-      </div>
-    `;
-    
-    // Clear message after 6 seconds
-    setTimeout(() => {
-      if (formStatus) {
-        formStatus.innerHTML = '';
-      }
-    }, 4000);
+      </div>`;
+    setTimeout(() => { if (formStatus) formStatus.innerHTML = ''; }, 4000);
   }
 
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
-      // Get form elements
-      const name = document.querySelector('#name');
-      const email = document.querySelector('#email');
-      const message = document.querySelector('#message');
+
+      const name      = document.querySelector('#name');
+      const email     = document.querySelector('#email');
+      const message   = document.querySelector('#message');
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      
-      // Validation
-      let valid = true;
-      
-      // Clear previous errors
+
       removeError(name);
       removeError(email);
       removeError(message);
-      
-      // Validate name
+
+      let valid = true;
       if (!name.value.trim()) {
-        valid = false;
-        displayError(name, 'Please enter your name');
+        displayError(name, 'Please enter your name'); valid = false;
       }
-      
-      // Validate email
       if (!email.value.trim()) {
-        valid = false;
-        displayError(email, 'Please enter your email');
+        displayError(email, 'Please enter your email'); valid = false;
       } else if (!isValidEmail(email.value.trim())) {
-        valid = false;
-        displayError(email, 'Please enter a valid email address');
+        displayError(email, 'Please enter a valid email address'); valid = false;
       }
-      
-      // Validate message
       if (!message.value.trim()) {
-        valid = false;
-        displayError(message, 'Please enter your message');
+        displayError(message, 'Please enter your message'); valid = false;
       } else if (message.value.trim().length < 10) {
-        valid = false;
-        displayError(message, 'Message must be at least 10 characters long');
+        displayError(message, 'Message must be at least 10 characters long'); valid = false;
       }
-      
-      if (!valid) {
-        return;
-      }
-    
+      if (!valid) return;
+
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span>Sending...</span>';
       submitBtn.disabled = true;
-      
+
       try {
-        const formData = new FormData(contactForm);
-        console.log('Submitting form to:', contactForm.action);
-        console.log('Form data:', {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          message: formData.get('message')
-        });
         const response = await fetch(contactForm.action, {
           method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
         });
-        
-        console.log('Response status:', response.status);
-        
+
         if (response.ok) {
-          showFormStatus('✅ Thank you! Your message has been sent successfully. I\'ll get back to you soon!', true);
+          showFormStatus("✅ Thank you! Your message has been sent successfully. I'll get back to you soon!", true);
           contactForm.reset();
         } else {
           let errorMessage = 'Sorry, there was an error sending your message. Please try again.';
-          
           try {
             const errorData = await response.json();
-            console.log('Error data:', errorData);
-            
-            if (errorData.errors && errorData.errors.length > 0) {
-              errorMessage = `Error: ${errorData.errors[0].message}`;
-            }
-          } catch (parseError) {
-            console.log('Could not parse error response');
-          }
-          
-          if (response.status === 422) {
-            errorMessage = 'Please check your form data and try again.';
-          } else if (response.status === 429) {
-            errorMessage = 'Too many requests. Please wait a moment and try again.';
-          } else if (response.status >= 500) {
-            errorMessage = 'Server error. Please try again in a few minutes.';
-          }
-          
+            if (errorData.errors?.length > 0) errorMessage = `Error: ${errorData.errors[0].message}`;
+          } catch (_) {}
+          if (response.status === 422) errorMessage = 'Please check your form data and try again.';
+          else if (response.status === 429) errorMessage = 'Too many requests. Please wait a moment and try again.';
+          else if (response.status >= 500) errorMessage = 'Server error. Please try again in a few minutes.';
           showFormStatus(`❌ ${errorMessage}`, false);
         }
-        
       } catch (error) {
-        console.error('Form submission error:', error);
         showFormStatus('🥲 Network error. Please check your connection and try again.', false);
       } finally {
         submitBtn.innerHTML = originalText;
@@ -336,88 +256,24 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    const nameField = document.querySelector('#name');
-    const emailField = document.querySelector('#email');
+    const nameField    = document.querySelector('#name');
+    const emailField   = document.querySelector('#email');
     const messageField = document.querySelector('#message');
-    
-    if (nameField) {
-      nameField.addEventListener('blur', function() {
-        if (this.value.trim() && this.value.trim().length < 2) {
-          displayError(this, 'Name must be at least 2 characters');
-        } else if (this.value.trim()) {
-          removeError(this);
-        }
-      });
-    }
-    
-    if (emailField) {
-      emailField.addEventListener('blur', function() {
-        if (this.value.trim() && !isValidEmail(this.value.trim())) {
-          displayError(this, 'Please enter a valid email address');
-        } else if (this.value.trim()) {
-          removeError(this);
-        }
-      });
-    }
-    
-    if (messageField) {
-      messageField.addEventListener('blur', function() {
-        if (this.value.trim() && this.value.trim().length < 10) {
-          displayError(this, 'Message must be at least 10 characters');
-        } else if (this.value.trim()) {
-          removeError(this);
-        }
-      });
-    }
-  }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-  const backToTopButton = document.querySelector('.back-to-top');
-  
-  if (backToTopButton) {
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.add('active');
-      } else {
-        backToTopButton.classList.remove('active');
-      }
+    nameField?.addEventListener('blur', function() {
+      if (this.value.trim() && this.value.trim().length < 2) displayError(this, 'Name must be at least 2 characters');
+      else if (this.value.trim()) removeError(this);
     });
-    
-    backToTopButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+
+    emailField?.addEventListener('blur', function() {
+      if (this.value.trim() && !isValidEmail(this.value.trim())) displayError(this, 'Please enter a valid email address');
+      else if (this.value.trim()) removeError(this);
+    });
+
+    messageField?.addEventListener('blur', function() {
+      if (this.value.trim() && this.value.trim().length < 10) displayError(this, 'Message must be at least 10 characters');
+      else if (this.value.trim()) removeError(this);
     });
   }
+
 });
-
-window.addEventListener("scroll", () => {
-  const toggle = document.getElementById("toggle-menu");
-  if (toggle && toggle.checked) {
-    toggle.checked = false;
-  }
-});
-
-const formStyles = `
-  .error-message {
-    animation: fadeIn 0.3s ease-in;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .form-group input.error,
-  .form-group textarea.error {
-    border-color: #e74c3c !important;
-    box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
-  }
-`;
-
-const styleSheet = document.createElement('style');
-styleSheet.textContent = formStyles;
-document.head.appendChild(styleSheet);
