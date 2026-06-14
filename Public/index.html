@@ -36,7 +36,7 @@
   <!-- Your CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- FontAwesome - from cdnjs only (matches CSP) -->
+  <!-- FontAwesome -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   </noscript>
 
-  <!-- Scripts - deferred -->
+  <!-- Scripts - deferred (only once here, removed duplicates from bottom) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
   <script src="script.js" defer></script>
@@ -60,7 +60,6 @@
   <div id="particles-js"></div>
 
   <header>
-    <!-- Navbar -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="" class="logo">
@@ -88,7 +87,7 @@
   </header>
 
   <main>
-    <!-- Home Section with parallax scrolling -->
+    <!-- Home Section -->
     <section class="home" id="home">
       <div class="home-content" data-aos="fade-up" data-aos-duration="1000">
         <div class="glitch-wrapper">
@@ -103,7 +102,7 @@
         <span class="scroll-arrow"></span>
       </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up" data-aos-duration="800">
@@ -111,7 +110,7 @@
         <div class="content">
           <div class="about-content">
             <div class="profile-container">
-              <img src="./images/sateesh.webp" loading="lazy" alt="sateeshreddymaddi" class="profile-pic" id="profilePic">
+              <img src="./images/sateesh.webp" loading="lazy" alt="SateeshReddy Maddi" class="profile-pic" id="profilePic" width="300" height="300">
               <div class="profile-overlay">
                 <div class="profile-text">Sateesh Reddy</div>
               </div>
@@ -123,11 +122,11 @@
             </div>
           </div>
           <div class="details" data-aos="fade-left" data-aos-delay="200">
-            <p>Hello! I'm <span class="highlight">Sateesh</span>, a passionate web developer with a strong foundation 
-              in creating dynamic websites. Currently, I'm learning ethical hacking to 
-              enhance my skills in web security. I thrive on challenges and love exploring 
+            <p>Hello! I'm <span class="highlight">Sateesh</span>, a passionate web developer with a strong foundation
+              in creating dynamic websites. Currently, I'm learning ethical hacking to
+              enhance my skills in web security. I thrive on challenges and love exploring
               new technologies.</p>
-            <p>In my free time, I enjoy working on personal projects and 
+            <p>In my free time, I enjoy working on personal projects and
               contributing to open-source initiatives. I'm excited to connect with others
               and grow in the tech community!</p>
             <div class="about-stats">
@@ -144,11 +143,11 @@
                 <span class="stat-text">Technologies</span>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </section>
-    
+
     <!-- Education Section -->
     <section id="education" class="education">
       <div class="container">
@@ -181,302 +180,230 @@
         </div>
       </div>
     </section>
-    
-<!-- Simplified Skills Section -->
-<section id="skills" class="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        
-        <!-- Skills Icons -->
-        <div class="skills-container">
-            <div class="skill-icon-card" data-skill="Html-5">
-                <img src="./images/html.webp" loading="lazy" alt="HTML-5" class="skill-image">
-            </div>
 
-            <div class="skill-icon-card" data-skill="CSS">
-                <img src="./images/CSS.webp" loading="lazy" alt="CSS" class="skill-image">
-            </div>
-            
-            <div class="skill-icon-card" data-skill="JavaScript">
-                <img src="./images/Js.webp" loading="lazy" alt="JavaScript" class="skill-image">
-            </div>
-            
-            <div class="skill-icon-card" data-skill="C++">
-                <img src="./images/C++.webp" loading="lazy" alt="C++" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="Python">
-                <img src="./images/python.webp" loading="lazy" alt="Python" class="skill-image">
-            </div>
-            
-            <div class="skill-icon-card" data-skill="React">
-                <img src="./images/react.jpeg.webp" loading="lazy" alt="React" class="skill-image">
-            </div>
-            
-            <div class="skill-icon-card" data-skill="MongoDB">
-                <img src="./images/mongo.webp" loading="lazy" alt="MongoDB" class="skill-image">
-            </div>
-            
-            <div class="skill-icon-card" data-skill="MySQL">
-                <img src="./images/mysql.webp" loading="lazy" alt="MySQL" class="skill-image">
-            </div>
-           
-            <div class="skill-icon-card" data-skill="Ethical Hacking">
-                <img src="./images/ethicalhacking.webp" loading="lazy" alt="Ethical Hacking" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="Docker">
-                <img src="./images/docker.webp" loading="lazy" alt="Docker" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="Git">
-                <img src="./images/git.webp" loading="lazy" alt="Git" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="n8n-workflow">
-                <img src="./images/N8N.webp" loading="lazy" alt="n8n-workflow" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="Git Hub">
-                <img src="./images/github.webp" loading="lazy" alt="Ethical Hacking" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="BootStrap">
-                <img src="./images/bootstrap.webp" loading="lazy" alt="BootStrap" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="Tailwind CSS">
-                <img src="./images/tailwindcss.webp" loading="lazy" alt="Tailwind CSS" class="skill-image">
-            </div>
-
-            <div class="skill-icon-card" data-skill="Linux-Commands">
-                <img src="./images/linux.webp" alt="Linux" class="skill-image">
-            </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-icon-card" data-skill="Html-5">
+          <img src="./images/html.webp" loading="lazy" alt="HTML5" class="skill-image" width="70" height="70">
         </div>
+        <div class="skill-icon-card" data-skill="CSS">
+          <img src="./images/CSS.webp" loading="lazy" alt="CSS" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="JavaScript">
+          <img src="./images/Js.webp" loading="lazy" alt="JavaScript" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="C++">
+          <img src="./images/C++.webp" loading="lazy" alt="C++" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Python">
+          <img src="./images/python.webp" loading="lazy" alt="Python" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="React">
+          <img src="./images/react.jpeg.webp" loading="lazy" alt="React" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="MongoDB">
+          <img src="./images/mongo.webp" loading="lazy" alt="MongoDB" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="MySQL">
+          <img src="./images/mysql.webp" loading="lazy" alt="MySQL" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Ethical Hacking">
+          <img src="./images/ethicalhacking.webp" loading="lazy" alt="Ethical Hacking" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Docker">
+          <img src="./images/docker.webp" loading="lazy" alt="Docker" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Git">
+          <img src="./images/git.webp" loading="lazy" alt="Git" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="n8n-workflow">
+          <img src="./images/N8N.webp" loading="lazy" alt="n8n workflow" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Git Hub">
+          <img src="./images/github.webp" loading="lazy" alt="GitHub" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="BootStrap">
+          <img src="./images/bootstrap.webp" loading="lazy" alt="Bootstrap" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Tailwind CSS">
+          <img src="./images/tailwindcss.webp" loading="lazy" alt="Tailwind CSS" class="skill-image" width="70" height="70">
+        </div>
+        <div class="skill-icon-card" data-skill="Linux-Commands">
+          <img src="./images/linux.webp" loading="lazy" alt="Linux" class="skill-image" width="70" height="70">
+        </div>
+      </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
 
-<!-- Project Section -->
-  <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
-
-              <!-- Test Management App -->
-                <div class="project-card" data-category="web app">
-                    <div class="project-badge">New</div>
-                    <div class="project-img">
-                        <img src="./images/test hub.webp" loading="lazy" alt="Task Management App">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">Test-Hub: A online Examination Portal </a></h3>
-                        <p>Test Hub is an online examination platform designed for educators to create, manage, and evaluate multiple-choice tests effortlessly. It features real-time student performance tracking, secure data storage with MongoDB Atlas, and a user-friendly interface for both teachers and students.</p>
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Express.js</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Tailwind CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Resume Classfier -->
-                <div class="project-card" data-category="web app">
-                    <div class="project-badge">New</div>
-                    <div class="project-img">
-                        <img src="./images/Resume classifier.webp" loading="lazy" alt="Resume Classifier">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles"> AI-Powered Resume Screening & Classification Workflow </a></h3>
-                        <p>An intelligent automation system designed to streamline the hiring process. This workflow automatically parses resumes, leverages AI to evaluate, score, and classify candidates by role, stores structured data in Google Sheets, and sends personalized feedback to applicants—significantly reducing HR screening time while enhancing the candidate experience.</p>
-                        <div class="project-tech">
-                            <span>n8n</span>
-                            <span>AI/LLMs</span>
-                            <span>Groq</span>
-                            <span>Prompt Engineering</span>
-                            <span>Google Sheets</span>
-                            <span>Gmail API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Airbnb Clone -->
-                <div class="project-card" data-category="web app">
-                    <div class="project-img">
-                        <img src="./images/airbnb.webp" loading="lazy" alt="Airbnb Clone">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://airbnb-clone-ktd1.onrender.com/listings" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">Airbnb Clone</a></h3>
-                        <p>Airbnb Clone is a basic full-stack web application where users can sign up, log in with JWT authentication, add property listings, and rate stays. Built using React.js, Node.js, Express.js, and MongoDB, it supports essential CRUD operations and features a responsive UI.</p>
-                        <div class="project-tech">
-                            <span>Html/CSS</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>Express.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <!-- AI Image Generation -->
-                <div class="project-card" data-category="api">
-                    <div class="project-img">
-                        <img src="./images/image_generation.webp" loading="lazy" alt="AI Image Generation">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">AI Image Generation</a></h3>
-                        <p>AI Image Generation is a web-based tool that uses the OpenAI DALL·E API to generate high-quality images from text prompts. It enables users to create unique visuals instantly, making it ideal for designers, content creators, and developers exploring generative AI.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>OpenAI API</span>
-                            <span>Html</span>
-                            <span>CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotify Clone -->
-                <div class="project-card" data-category="web design">
-                    <div class="project-img">
-                        <img src="./images/spotify_clone.webp" loading="lazy" alt="Spotify Clone">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">Spotify Clone</a></h3>
-                        <p>Music streaming interface clone with playlist management, audio controls, and responsive design showcasing advanced CSS skills.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>Web Audio API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Photography Portfolio -->
-                <div class="project-card" data-category="design">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=300&fit=crop&crop=center" loading="lazy" alt="Photography Portfolio">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">Photography Portfolio</a></h3>
-                        <p>Elegant photography showcase with lightbox gallery, smooth animations, and responsive grid layout demonstrating advanced CSS techniques.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>Lightbox</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Weather Dashboard -->
-                <div class="project-card" data-category="api">
-                    <div class="project-img">
-                        <img src="./images/weather_app.webp" loading="lazy" alt="Weather App">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">Weather Dashboard</a></h3>
-                        <p>Comprehensive weather application with 7-day forecasts, interactive maps, and location-based weather alerts using OpenWeather API.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>OpenWeather API</span>
-                            <span>Chart.js</span>
-                            <span>Geolocation API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hungman Game -->
-                <div class="project-card" data-category="web game">
-                    <div class="project-img">
-                        <img src="./images/Hungman Game.webp" loading="lazy" alt="Hungman Game">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#" class="project-titles">Hangman-game</a></h3>
-                        <p>Interactive memory game with sound effects, difficulty levels, and high score tracking. Built to explore JavaScript game development.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>Web Audio API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Website -->
-                <div class="project-card" data-category="web">
-                    <div class="project-img">
-                        <img src="./images/Portfolio.webp" loading="lazy" alt="Portfolio Website">
-                        <!-- <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="project-info">
-                        <h3><a href="#home" class="project-titles">Portfolio Website</a></h3>
-                        <p>Personal portfolio showcasing projects and skills with smooth animations, dark/light theme toggle, and contact form integration.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>AOS Library</span>
-                        </div>
-                    </div>
-                </div>
+          <!-- Test Management App -->
+          <div class="project-card" data-category="web app">
+            <div class="project-badge">New</div>
+            <div class="project-img">
+              <img src="./images/test hub.webp" loading="lazy" alt="Test Hub Examination Portal" width="500" height="300">
             </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">Test-Hub: A online Examination Portal</a></h3>
+              <p>Test Hub is an online examination platform designed for educators to create, manage, and evaluate multiple-choice tests effortlessly. It features real-time student performance tracking, secure data storage with MongoDB Atlas, and a user-friendly interface for both teachers and students.</p>
+              <div class="project-tech">
+                <span>React.js</span>
+                <span>Express.js</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resume Classifier -->
+          <div class="project-card" data-category="web app">
+            <div class="project-badge">New</div>
+            <div class="project-img">
+              <img src="./images/Resume classifier.webp" loading="lazy" alt="AI Resume Screening Workflow" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">AI-Powered Resume Screening & Classification Workflow</a></h3>
+              <p>An intelligent automation system designed to streamline the hiring process. This workflow automatically parses resumes, leverages AI to evaluate, score, and classify candidates by role, stores structured data in Google Sheets, and sends personalized feedback to applicants.</p>
+              <div class="project-tech">
+                <span>n8n</span>
+                <span>AI/LLMs</span>
+                <span>Groq</span>
+                <span>Prompt Engineering</span>
+                <span>Google Sheets</span>
+                <span>Gmail API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Airbnb Clone -->
+          <div class="project-card" data-category="web app">
+            <div class="project-img">
+              <img src="./images/airbnb.webp" loading="lazy" alt="Airbnb Clone Full Stack App" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">Airbnb Clone</a></h3>
+              <p>Airbnb Clone is a basic full-stack web application where users can sign up, log in with JWT authentication, add property listings, and rate stays. Built using React.js, Node.js, Express.js, and MongoDB, it supports essential CRUD operations and features a responsive UI.</p>
+              <div class="project-tech">
+                <span>Html/CSS</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>Express.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Image Generation -->
+          <div class="project-card" data-category="api">
+            <div class="project-img">
+              <img src="./images/image_generation.webp" loading="lazy" alt="AI Image Generation Tool" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">AI Image Generation</a></h3>
+              <p>AI Image Generation is a web-based tool that uses the OpenAI DALL·E API to generate high-quality images from text prompts. It enables users to create unique visuals instantly, making it ideal for designers, content creators, and developers exploring generative AI.</p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>OpenAI API</span>
+                <span>Html</span>
+                <span>CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spotify Clone -->
+          <div class="project-card" data-category="web design">
+            <div class="project-img">
+              <img src="./images/spotify_clone.webp" loading="lazy" alt="Spotify Clone Music App" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">Spotify Clone</a></h3>
+              <p>Music streaming interface clone with playlist management, audio controls, and responsive design showcasing advanced CSS skills.</p>
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Web Audio API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photography Portfolio -->
+          <div class="project-card" data-category="design">
+            <div class="project-img">
+              <img src="./images/photography.webp" loading="lazy" alt="Photography Portfolio Website" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">Photography Portfolio</a></h3>
+              <p>Elegant photography showcase with lightbox gallery, smooth animations, and responsive grid layout demonstrating advanced CSS techniques.</p>
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Lightbox</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weather Dashboard -->
+          <div class="project-card" data-category="api">
+            <div class="project-img">
+              <img src="./images/weather_app.webp" loading="lazy" alt="Weather Dashboard App" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">Weather Dashboard</a></h3>
+              <p>Comprehensive weather application with 7-day forecasts, interactive maps, and location-based weather alerts using OpenWeather API.</p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>OpenWeather API</span>
+                <span>Chart.js</span>
+                <span>Geolocation API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hangman Game -->
+          <div class="project-card" data-category="web game">
+            <div class="project-img">
+              <img src="./images/Hungman Game.webp" loading="lazy" alt="Hangman Word Game" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#" class="project-titles">Hangman-game</a></h3>
+              <p>Interactive memory game with sound effects, difficulty levels, and high score tracking. Built to explore JavaScript game development.</p>
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Web Audio API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Website -->
+          <div class="project-card" data-category="web">
+            <div class="project-img">
+              <img src="./images/Portfolio.webp" loading="lazy" alt="Personal Portfolio Website" width="500" height="300">
+            </div>
+            <div class="project-info">
+              <h3><a href="#home" class="project-titles">Portfolio Website</a></h3>
+              <p>Personal portfolio showcasing projects and skills with smooth animations, dark/light theme toggle, and contact form integration.</p>
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>AOS Library</span>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
@@ -505,27 +432,40 @@
               </div>
             </div>
             <div class="social-links">
-              <a href="https://www.linkedin.com/in/sateeshreddymaddi" class="social-link"  link-name="LinkedIn">
+              <a href="https://www.linkedin.com/in/sateeshreddymaddi"
+                class="social-link"
+                link-name="LinkedIn"
+                aria-label="LinkedIn Profile"
+                target="_blank"
+                rel="noopener noreferrer">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://leetcode.com/u/sateeshreddy_8639/" class="social-link"  link-name="Leetcode">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 24 24" 
-                  width="1em" 
-                  height="1em" 
-                  fill="currentColor">
+              <a href="https://leetcode.com/u/sateeshreddy_8639/"
+                class="social-link"
+                link-name="Leetcode"
+                aria-label="LeetCode Profile"
+                target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                   <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
                 </svg>
               </a>
-              <a href="https://www.geeksforgeeks.org/user/sateeshreddymaddi/" class="social-link"  link-name="GeeksforGeeks">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                  width="1em" height="1em" fill="currentColor" 
-                  style="width:1em; height:1em; fill:currentColor;">
+              <a href="https://www.geeksforgeeks.org/user/sateeshreddymaddi/"
+                class="social-link"
+                link-name="GeeksforGeeks"
+                aria-label="GeeksForGeeks Profile"
+                target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                   <path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.691 3.691 0 0 1-1.104.695 4.51 4.51 0 0 1-3.116-.016 3.79 3.79 0 0 1-2.135-2.078 3.571 3.571 0 0 1-.13-.353h7.418a4.26 4.26 0 0 1-.368 1.008zm-11.99-.654a3.793 3.793 0 0 1-2.134 2.078 4.51 4.51 0 0 1-3.117.016 3.7 3.7 0 0 1-1.104-.695 2.652 2.652 0 0 1-.564-.745 4.221 4.221 0 0 1-.368-1.006H9.59c-.038.12-.08.238-.13.352zm14.501-1.758a3.849 3.849 0 0 0-.082-.475l-9.634-.008a3.932 3.932 0 0 1 1.143-2.348c.363-.35.79-.625 1.26-.809a3.97 3.97 0 0 1 4.484.957l1.521-1.49a5.7 5.7 0 0 0-1.922-1.357 6.283 6.283 0 0 0-2.544-.49 6.35 6.35 0 0 0-2.405.457 6.007 6.007 0 0 0-1.963 1.276 6.142 6.142 0 0 0-1.325 1.94 5.862 5.862 0 0 0-.466 1.864h-.063a5.857 5.857 0 0 0-.467-1.865 6.13 6.13 0 0 0-1.325-1.939A6 6 0 0 0 8.21 6.34a6.698 6.698 0 0 0-4.949.031A5.708 5.708 0 0 0 1.34 7.73l1.52 1.49a4.166 4.166 0 0 1 4.484-.958c.47.184.898.46 1.26.81.368.36.66.792.859 1.268.146.344.242.708.285 1.08l-9.635.008A4.714 4.714 0 0 0 0 12.457a6.493 6.493 0 0 0 .345 2.127 4.927 4.927 0 0 0 1.08 1.783c.528.56 1.17 1 1.88 1.293a6.454 6.454 0 0 0 2.504.457c.824.005 1.64-.15 2.404-.457a5.986 5.986 0 0 0 1.964-1.277 6.116 6.116 0 0 0 1.686-3.076h.273a6.13 6.13 0 0 0 1.686 3.077 5.99 5.99 0 0 0 1.964 1.276 6.345 6.345 0 0 0 2.405.457 6.45 6.45 0 0 0 2.502-.457 5.42 5.42 0 0 0 1.882-1.293 4.928 4.928 0 0 0 1.08-1.783A6.52 6.52 0 0 0 24 12.457a4.757 4.757 0 0 0-.039-.554z"/>
                 </svg>
               </a>
-              <a href="https://www.hackerrank.com/profile/maddisateeshred1" class="social-link"  link-name="Hackerrank">
+              <a href="https://www.hackerrank.com/profile/maddisateeshred1"
+                class="social-link"
+                link-name="Hackerrank"
+                aria-label="HackerRank Profile"
+                target="_blank"
+                rel="noopener noreferrer">
                 <i class="fa-brands fa-hackerrank"></i>
               </a>
             </div>
@@ -570,27 +510,32 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="social">
-        <a href="https://www.linkedin.com/in/sateeshreddymaddi">
+        <a href="https://www.linkedin.com/in/sateeshreddymaddi"
+          aria-label="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://www.geeksforgeeks.org/user/sateeshreddymaddi/">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-            width="1em" height="1em" fill="currentColor" 
-            style="width:1em; height:1em; fill:currentColor;">
+        <a href="https://www.geeksforgeeks.org/user/sateeshreddymaddi/"
+          aria-label="GeeksForGeeks"
+          target="_blank"
+          rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
             <path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.691 3.691 0 0 1-1.104.695 4.51 4.51 0 0 1-3.116-.016 3.79 3.79 0 0 1-2.135-2.078 3.571 3.571 0 0 1-.13-.353h7.418a4.26 4.26 0 0 1-.368 1.008zm-11.99-.654a3.793 3.793 0 0 1-2.134 2.078 4.51 4.51 0 0 1-3.117.016 3.7 3.7 0 0 1-1.104-.695 2.652 2.652 0 0 1-.564-.745 4.221 4.221 0 0 1-.368-1.006H9.59c-.038.12-.08.238-.13.352zm14.501-1.758a3.849 3.849 0 0 0-.082-.475l-9.634-.008a3.932 3.932 0 0 1 1.143-2.348c.363-.35.79-.625 1.26-.809a3.97 3.97 0 0 1 4.484.957l1.521-1.49a5.7 5.7 0 0 0-1.922-1.357 6.283 6.283 0 0 0-2.544-.49 6.35 6.35 0 0 0-2.405.457 6.007 6.007 0 0 0-1.963 1.276 6.142 6.142 0 0 0-1.325 1.94 5.862 5.862 0 0 0-.466 1.864h-.063a5.857 5.857 0 0 0-.467-1.865 6.13 6.13 0 0 0-1.325-1.939A6 6 0 0 0 8.21 6.34a6.698 6.698 0 0 0-4.949.031A5.708 5.708 0 0 0 1.34 7.73l1.52 1.49a4.166 4.166 0 0 1 4.484-.958c.47.184.898.46 1.26.81.368.36.66.792.859 1.268.146.344.242.708.285 1.08l-9.635.008A4.714 4.714 0 0 0 0 12.457a6.493 6.493 0 0 0 .345 2.127 4.927 4.927 0 0 0 1.08 1.783c.528.56 1.17 1 1.88 1.293a6.454 6.454 0 0 0 2.504.457c.824.005 1.64-.15 2.404-.457a5.986 5.986 0 0 0 1.964-1.277 6.116 6.116 0 0 0 1.686-3.076h.273a6.13 6.13 0 0 0 1.686 3.077 5.99 5.99 0 0 0 1.964 1.276 6.345 6.345 0 0 0 2.405.457 6.45 6.45 0 0 0 2.502-.457 5.42 5.42 0 0 0 1.882-1.293 4.928 4.928 0 0 0 1.08-1.783A6.52 6.52 0 0 0 24 12.457a4.757 4.757 0 0 0-.039-.554z"/>
           </svg>
         </a>
-        <a href="https://leetcode.com/u/sateeshreddy_8639/">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            width="1em" 
-            height="1em" 
-            fill="currentColor">
+        <a href="https://leetcode.com/u/sateeshreddy_8639/"
+          aria-label="LeetCode"
+          target="_blank"
+          rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
             <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
           </svg>
         </a>
-        <a href="https://www.hackerrank.com/profile/maddisateeshred1">
+        <a href="https://www.hackerrank.com/profile/maddisateeshred1"
+          aria-label="HackerRank"
+          target="_blank"
+          rel="noopener noreferrer">
           <i class="fa-brands fa-hackerrank"></i>
         </a>
       </div>
@@ -602,12 +547,9 @@
   </footer>
 
   <!-- Back to top button -->
-  <a href="#home" class="back-to-top">
+  <a href="#home" class="back-to-top" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </a>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-  <script src="script.js" defer></script>
+
 </body>
 </html>

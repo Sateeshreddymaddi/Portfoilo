@@ -1,24 +1,27 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
-const formStyles = `
-  .error-message {
-    animation: fadeIn 0.3s ease-in;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .form-group input.error,
-  .form-group textarea.error {
-    border-color: #e74c3c !important;
-    box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
-  }
-`;
-const styleSheet = document.createElement('style');
-styleSheet.textContent = formStyles;
-document.head.appendChild(styleSheet);
-
 document.addEventListener('DOMContentLoaded', function() {
+
+  // ── Form Error Styles ─────────────────────
+  const formStyles = `
+    .error-message {
+      animation: fadeIn 0.3s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #e74c3c !important;
+      box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+    }
+  `;
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = formStyles;
+  document.head.appendChild(styleSheet);
+
+  // ── AOS Init ──────────────────────────────
   if (typeof AOS !== 'undefined') {
     AOS.init({
       duration: 1000,
@@ -28,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ── Particles.js Init ─────────────────────
   if (typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {
       particles: {
@@ -245,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = false;
       }
     });
-    
+
     const nameField    = document.querySelector('#name');
     const emailField   = document.querySelector('#email');
     const messageField = document.querySelector('#message');
